@@ -16,7 +16,7 @@ async function generateAIQuest() {
     output.innerText = "Generating quest...";
 
     try {
-        const response = await fetch("https://api.quotable.io/random");
+        const response = await fetch("https://official-joke-api.appspot.com/random_joke");
         const data = await response.json();
 
         // Create AI-style text
