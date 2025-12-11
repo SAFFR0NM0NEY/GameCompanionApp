@@ -17,13 +17,12 @@ async function generateAIQuest() {
 
     try {
         const response = await fetch("https://api.quotable.io/random");
-
-        // IMPORTANT: we MUST parse JSON
         const data = await response.json();
 
+        // Create AI-style text
         const aiQuest = `AI Quest: "${data.content}" — A clue from ${data.author}.`;
 
-        // **DISPLAY THE RESULT**
+        // DISPLAY IT HERE
         output.innerText = aiQuest;
 
     } catch (error) {
