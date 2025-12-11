@@ -19,7 +19,7 @@ async function generateAIQuest() {
     const data = await response.json();
 
     // simulating AI quest text
-    const aiQuest = `AI Quest: ${data.value}`;
+    document.getElementById("ai-output").innerText = aiQuest;
 }
 
 function safeText(input) {
