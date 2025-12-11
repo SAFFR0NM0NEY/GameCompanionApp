@@ -15,7 +15,7 @@ async function generateAIQuest() {
     document.getElementById("ai-output").innerText = "Generating quest...";
 
     // Using a public API as a stand-in for AI text
-    const response = await fetch("https://api.chucknorris.io/jokes/random");
+    const response = await fetch("https://pokeapi.co/api/v2/pokemon/pikachu");
     const data = await response.json();
 
     // simulating AI quest text
