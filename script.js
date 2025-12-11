@@ -12,16 +12,26 @@ function generateQuest() {
 }
 
 async function generateAIQuest() {
-    document.getElementById("ai-output").innerText = "Generating quest...";
+    const output = document.getElementById("ai-output");
+    output.innerText = "Generating quest...";
 
-    // Using a public API as a stand-in for AI text
-    const response = await fetch("https://pokeapi.co/api/v2/pokemon/pikachu");
-    const data = await response.json();
+    try {
+        const response = await fetch("https://api.quotable.io/random");
 
-    // simulating AI quest text
-    document.getElementById("ai-output").innerText = aiQuest;
+        // IMPORTANT: we MUST parse JSON
+        const data = await response.json();
+
+        const aiQuest = `AI Quest: "${data.content}" — A clue from ${data.author}.`;
+
+        // **DISPLAY THE RESULT**
+        output.innerText = aiQuest;
+
+    } catch (error) {
+        output.innerText = "Error loading AI quest.";
+        console.error(error);
+    }
 }
 
 function safeText(input) {
-    return input.replace(/[<>]/g, ""); // removes dangerous symbols
+    return input.replace(/[<>]/g, "");
 }

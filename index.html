@@ -7,12 +7,11 @@
     </head>
 
     <body>
-       
+
         <h1>Game Companion App</h1>
         <p class="intro-text">A small Companion tool for gathering quests and viewing characters stats.</p>
 
-        <!-- Character Stats Section -->
-         <section class="stats">
+        <section class="stats">
             <h2>Character Stats</h2>
             <p><strong>Name:</strong> VoidRunner</p>
             <p><strong>Class:</strong> Cyber Mage</p>
@@ -21,15 +20,17 @@
             <p><strong>Energy:</strong> 100</p>
         </section>
 
-        <!-- Quest Generator Section -->
-         <section class="Quest">
-            <h2> Quest Generator</h2>
+        <section class="quest">
+            <h2>Quest Generator</h2>
+
+        <!-- FIXED BUTTON -->
             <button onclick="generateQuest()">Generate Random Quest</button>
             <p id="quest-output"></p>
+
             <button onclick="generateAIQuest()">Generate AI Quest</button>
             <p id="ai-output"></p>
-         </section>
+        </section>
 
-         <script src="script.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>
